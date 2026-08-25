@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ShopNest | Smart Shopping</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<header><div class="brand"><b>SN</b><div><strong>ShopNest</strong><small>smart finds, happy prices</small></div></div>
+<div class="search"><input id="search" placeholder="Search products..."><button onclick="searchProducts()">Search</button></div>
+<div id="userArea"></div><button class="cart" onclick="openCart()">🛒 Cart <span id="count">0</span></button></header>
+
+<section class="hero"><div><label>COLLEGE E-COMMERCE PROJECT</label><h1>Everything you need.<br><span>One smart nest.</span></h1><p>Fashion, electronics, footwear and home essentials at friendly prices.</p><button onclick="document.querySelector('#products').scrollIntoView({behavior:'smooth'})">Shop Now</button></div><div class="offer"><small>UP TO</small><b>60%</b><span>OFF</span></div></section>
+<section class="cats"><h2>Shop by Category</h2><div id="cats"></div></section>
+<main id="products"><div class="heading"><div><label>TRENDING NOW</label><h2>Popular Products</h2></div><span id="results"></span></div><div id="grid"></div></main>
+
+<div id="modal" class="overlay hide"><div class="box"><button class="x" onclick="closeModal()">×</button><img id="mi"><div><label id="mc"></label><h2 id="mn"></h2><p id="mr"></p><p id="md"></p><h2 id="mp"></h2><p id="ms"></p><button id="ma">Add to Cart</button></div></div></div>
+<div id="cartModal" class="overlay hide"><div class="cartbox"><button class="x" onclick="closeCart()">×</button><h2>Your Cart</h2><div id="items"></div><h3 class="total" id="total">₹0</h3><button onclick="openCheckout()">Proceed to Checkout</button></div></div>
+
+<div id="authModal" class="overlay hide"><div class="authbox"><button class="x" onclick="closeAuth()">×</button><div class="tabs"><button id="customerTab" onclick="showAuth('customer')">Customer Login</button><button onclick="showAuth('admin')">Admin Login</button></div><div id="authForm"></div></div></div>
+
+<div id="checkoutModal" class="overlay hide"><div class="authbox"><button class="x" onclick="closeCheckout()">×</button><h2>Delivery & Payment</h2><form id="checkoutForm"><input id="cname" placeholder="Full name" required><input id="phone" placeholder="Phone number" required><textarea id="address" placeholder="Full delivery address" required></textarea><input id="city" placeholder="City" required><input id="pincode" placeholder="Pincode" required><select id="payment"><option>Cash on Delivery</option><option>UPI (Demo)</option><option>Card (Demo)</option></select><button>Place Order</button></form></div></div>
+
+<div id="ordersModal" class="overlay hide"><div class="cartbox"><button class="x" onclick="closeOrders()">×</button><h2>My Orders</h2><div id="orders"></div></div></div>
+
+<div id="adminModal" class="overlay hide"><div class="adminbox"><button class="x" onclick="closeAdmin()">×</button>
+<div class="admin-head"><div><label>ADMIN PANEL</label><h2>ShopNest Dashboard</h2></div><button onclick="adminLogout()">Logout</button></div>
+<div class="stats"><div><b id="sProducts">0</b><span>Products</span></div><div><b id="sUsers">0</b><span>Users</span></div><div><b id="sOrders">0</b><span>Orders</span></div><div><b id="sSales">₹0</b><span>Sales</span></div></div>
+<div class="admin-tabs"><button onclick="adminSection('products')">Products</button><button onclick="adminSection('orders')">Orders</button><button onclick="adminSection('add')">+ Add Product</button></div>
+<div id="adminContent"></div></div></div>
+
+<footer><b>ShopNest</b><span>Frontend • REST API • SQLite DBMS • Customer & Admin</span></footer>
+<script src="/js/app.js"></script></body></html>
